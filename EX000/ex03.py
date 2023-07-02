@@ -1,7 +1,7 @@
-num1 = int(input('Digite o primeiro número:'))
-num2 = int(input('Digite o segundo número:'))
-soma = num1 + num2
-print('A soma entre {} e {} vale {}'.format( num1, num2, soma))
+valor = int(input('Digite um valor:'))
+valor2 = int(input('Digite outro valor:'))
+soma = valor + valor2
+print('A soma entre o valor {} e o valor {} é de {}!'.format(valor,valor2,soma))
 
 
 
