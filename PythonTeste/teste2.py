@@ -11,4 +11,10 @@ mes3 = 12
 total3 = prog * mes3
 print('Total acumulado anual é de {}!'.format(total3))
 soma = total + total2 + total3
-print('Seu ganho anual foi de {} Reais, resultado do calculo do seu salário, com sua renda extra e seu trabalho de desenvolvimento '.format(soma))
+print('Seu ganho anual foi de {} Reais,\n resultado do calculo do seu salário,\n com sua renda extra e seu trabalho de desenvolvimento '.format(soma))
+
+
+
+
+
+
