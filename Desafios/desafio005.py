@@ -3,7 +3,7 @@ print('O numero digitado é {}, seu sucessor é {} e seu antecessor é {}!'.form
 
 
 
-num = int(input('Digite um numero:'))
-suc = num + 1
-ant = num - 1 
-print('Numero digitado é {}, seu sucessor é {} e seu antecessor é {}'.format(num,suc,ant))
+num2 = int(input('Digite um numero:'))
+suc = num2 + 1
+ant = num2 - 1
+print('Número digitado {} , seu Sucessor é {}"e seu antecessor é {}!'.format(num2,suc,ant))
