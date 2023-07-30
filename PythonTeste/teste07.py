@@ -12,7 +12,3 @@ else:
     falta = cell - din
     print('Falta apenas R${:.2f} para a compra do aparelho'.format(falta))
 print('Agradeçemos, volte sempre!')
-
-
-id = 19 // 2 , 19%2
-print(id)
