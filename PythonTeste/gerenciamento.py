@@ -54,8 +54,8 @@ for dia in range(1, 31):
 print('Você ficará com a banca positiva no final se seguir esse gerenciamento')
 
 """
+from colorama import Fore, Style, init, Back
 
-# Função para calcular a projeção da banca
 def calcular_projecao_banca(valor_inicial, meta_percentual, dias):
     banca = valor_inicial
     for dia in range(1, dias + 1):
@@ -63,50 +63,38 @@ def calcular_projecao_banca(valor_inicial, meta_percentual, dias):
         banca += meta_diaria
     return banca
 
-# Taxa de câmbio para converter de dólares para reais
-taxa_de_cambio = 5.50  # Você pode ajustar conforme necessário
+taxa_de_cambio = 6.19
 
-# Imprime o cabeçalho
 print('-' * 20)
-print('  Gestão de Banca  ')
+print(f"{Fore.GREEN}{Style.BRIGHT}Gestão de Banca {Style.RESET_ALL}")
 print('-' * 20)
 
-# Solicita o valor inicial da banca ao usuário em dólares
-valor_inicial = float(input('Digite o valor inicial da banca em dólares: $'))
+valor_inicial = float(input(f"Digite o valor inicial da banca em Libras: {Fore.BLACK}{Back.GREEN}{Style.BRIGHT} $ "))
 
-# Solicita ao usuário escolher o período (30 ou 60 dias)
-periodo = int(input('Escolha o período (30 ou 60 dias): '))
+periodo = int(input(f"{Style.RESET_ALL}Escolha o período ({Fore.LIGHTYELLOW_EX}30{Style.RESET_ALL} ou {Fore.BLUE}60{Style.RESET_ALL} dias): "))
 
-# Permite ao usuário escolher a moeda de exibição
-escolha_moeda = input('Escolha a moeda de exibição (Digite "D" para dólares ou "R" para reais): ').upper()
+escolha_moeda = input('Escolha a moeda de exibição (Digite "L" para libras ou "R" para reais): ').upper()
 
-# Calcula o valor do stop da banca
-stop = valor_inicial - (valor_inicial * 10 / 100)
+stop = valor_inicial - (valor_inicial * 8 / 100)
 print('Stop da Banca: \033[1;31m${:.2f}\033[0m'.format(stop))
-print('~' * 50)
+print('_' * 56)
 
-# Inicializa variáveis
-meta_diaria_percentual = 12.5
+meta_diaria_percentual = 8.1
 diasmetas = valor_inicial
 
-# Imprime cabeçalhos da tabela
-print('| Dias | Projeção | Meta Diária |')
+print('{:^15}{:^20}{:^20} '.format("Dias", "|    Projeção    |", "Meta Diária"))
+print("_" * 56)
 
-# Loop para o período escolhido
 for dia in range(1, periodo + 1):
-    # Calcula a meta diária e a projeção da banca
     meta_diaria = diasmetas * (meta_diaria_percentual / 100)
     diasmetas += meta_diaria
     
-    # Imprime os resultados formatados
-    print('{:^7} {:^11.2f} {:^12.2f}'.format(dia, diasmetas, meta_diaria))
-
-# Converte a projeção da banca para reais, se escolhida
+    print('{:^15} {:^20.2f} {:^20.2f}'.format(dia, diasmetas, meta_diaria))
+print("_" * 56)
 if escolha_moeda == 'R':
     diasmetas_reais = diasmetas * taxa_de_cambio
     print('Projeção da Banca em Reais após {} dias: R$ {:.2f}'.format(periodo, diasmetas_reais))
 else:
-    print('Projeção da Banca em Dólares após {} dias: $ {:.2f}'.format(periodo, diasmetas))
+    print('Projeção da Banca em Libras após {} dias: $ {:.2f}'.format(periodo, diasmetas))
     
-# Imprime uma mensagem final
 print('Você ficará com a banca positiva no final se seguir esse gerenciamento')

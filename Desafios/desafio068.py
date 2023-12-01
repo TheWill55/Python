@@ -1,4 +1,5 @@
 from random import randint
+from colorama import Fore, Style, init
 print('-' * 30)
 print('Vamos jogar par ou impar!')
 print('-' * 30)
