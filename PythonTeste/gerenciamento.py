@@ -54,7 +54,7 @@ for dia in range(1, 31):
 print('Você ficará com a banca positiva no final se seguir esse gerenciamento')
 
 """
-from colorama import Fore, Style, init, Back
+
 
 def calcular_projecao_banca(valor_inicial, meta_percentual, dias):
     banca = valor_inicial
@@ -66,14 +66,14 @@ def calcular_projecao_banca(valor_inicial, meta_percentual, dias):
 taxa_de_cambio = 6.19
 
 print('-' * 20)
-print(f"{Fore.GREEN}{Style.BRIGHT}Gestão de Banca {Style.RESET_ALL}")
+print(f"Gestão de Banca")
 print('-' * 20)
 
-valor_inicial = float(input(f"Digite o valor inicial da banca em Libras: {Fore.BLACK}{Back.GREEN}{Style.BRIGHT} $ "))
+valor_inicial = float(input(f"Digite o valor inicial da banca em EURO: $ "))
 
-periodo = int(input(f"{Style.RESET_ALL}Escolha o período ({Fore.LIGHTYELLOW_EX}30{Style.RESET_ALL} ou {Fore.BLUE}60{Style.RESET_ALL} dias): "))
+periodo = int(input(f"Escolha o período (30 ou 60 dias): "))
 
-escolha_moeda = input('Escolha a moeda de exibição (Digite "L" para libras ou "R" para reais): ').upper()
+escolha_moeda = input('Escolha a moeda de exibição (Digite "L" para EURO ou "R" para reais): ').upper()
 
 stop = valor_inicial - (valor_inicial * 8 / 100)
 print('Stop da Banca: \033[1;31m${:.2f}\033[0m'.format(stop))
@@ -95,6 +95,6 @@ if escolha_moeda == 'R':
     diasmetas_reais = diasmetas * taxa_de_cambio
     print('Projeção da Banca em Reais após {} dias: R$ {:.2f}'.format(periodo, diasmetas_reais))
 else:
-    print('Projeção da Banca em Libras após {} dias: $ {:.2f}'.format(periodo, diasmetas))
+    print('Projeção da Banca em EURO após {} dias: $ {:.2f}'.format(periodo, diasmetas))
     
 print('Você ficará com a banca positiva no final se seguir esse gerenciamento')
