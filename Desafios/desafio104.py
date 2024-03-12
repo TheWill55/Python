@@ -7,3 +7,5 @@ def leiaInt(mensagem):
             print("Por favor, Digite um valor numérico válido!")
 n = leiaInt('Digite um número inteiro: ')
 print("Você digitou: ", n)
+
+

@@ -73,7 +73,7 @@ valor_inicial = float(input(f"Digite o valor inicial da banca em EURO: $ "))
 
 periodo = int(input(f"Escolha o período (30 ou 60 dias): "))
 
-escolha_moeda = input('Escolha a moeda de exibição (Digite "L" para EURO ou "R" para reais): ').upper()
+escolha_moeda = input('Escolha a moeda de exibição (Digite "D" para dolar ou "R" para reais): ').upper()
 
 stop = valor_inicial - (valor_inicial * 8 / 100)
 print('Stop da Banca: \033[1;31m${:.2f}\033[0m'.format(stop))
@@ -95,6 +95,6 @@ if escolha_moeda == 'R':
     diasmetas_reais = diasmetas * taxa_de_cambio
     print('Projeção da Banca em Reais após {} dias: R$ {:.2f}'.format(periodo, diasmetas_reais))
 else:
-    print('Projeção da Banca em EURO após {} dias: $ {:.2f}'.format(periodo, diasmetas))
+    print('Projeção da Banca em DOLAR após {} dias: $ {:.2f}'.format(periodo, diasmetas))
     
 print('Você ficará com a banca positiva no final se seguir esse gerenciamento')
