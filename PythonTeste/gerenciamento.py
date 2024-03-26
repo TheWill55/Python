@@ -65,7 +65,7 @@ def calcular_projecao_banca(valor_inicial, meta_percentual, dias):
 
 taxa_de_cambio = 6.19
 
-print('-' * 20)
+print('-' * 20)  
 print(f"Gestão de Banca")
 print('-' * 20)
 

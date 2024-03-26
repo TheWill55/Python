@@ -42,33 +42,22 @@ resultado = notas(notas_alunos)
 print(resultado)
 
 """
-def notas(notas, situacao=None):
-    if not notas:
-        return {}  # Retorna um dicionário vazio se a lista de notas estiver vazia
-    
-    maior_nota = max(notas)
-    menor_nota = min(notas)
-    soma_notas = sum(notas)
-    quantidade = len(notas)
-    media = soma_notas / quantidade
-    
+def notas(notas, situacao=False):
+    h = dict()
+    h['Quantidade'] = len(notas)
+    h['Maior nota'] = max(notas)
+    h['Menor nota'] = min(notas)
+    h['Media'] = sum(notas)/len(notas)
     if situacao:
-        return {
-            "quantidade": quantidade,
-            "maiorNota": maior_nota,
-            "menorNota": menor_nota,
-            "média": media,
-            "situação": situacao
-        }
-    else:
-        return {
-            "quantidade": quantidade,
-            "maiorNota": maior_nota,
-            "menorNota": menor_nota,
-            "média": media
-        }
+        if h['Media'] >= 8:
+            h['sitacao'] = 'TOP'
+        elif h['Media'] == 7:
+            h['sitacao'] = 'Estude mais'
+        else:
+            h['sitacao'] = 'REPROVADO'
+    return h
+   
 
-# Exemplo de uso:
-notas_alunos = [8, 7, 6, 9, 8]
-resultado = notas(notas_alunos, situacao="Aprovado")
+notas_alunos = [6 ,8, 10, 6, 5]
+resultado = notas(notas_alunos, situacao = True )
 print(resultado)
