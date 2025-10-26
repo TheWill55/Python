@@ -75,11 +75,11 @@ periodo = int(input(f"Escolha o período (30 ou 60 dias): "))
 
 escolha_moeda = input('Escolha a moeda de exibição (Digite "D" para dolar ou "R" para reais): ').upper()
 
-stop = valor_inicial - (valor_inicial * 8 / 100)
+stop = valor_inicial - (valor_inicial * 12/ 100)
 print('Stop da Banca: \033[1;31m${:.2f}\033[0m'.format(stop))
 print('_' * 56)
 
-meta_diaria_percentual = 8.1
+meta_diaria_percentual = 20
 diasmetas = valor_inicial
 
 print('{:^15}{:^20}{:^20} '.format("Dias", "|    Projeção    |", "Meta Diária"))
